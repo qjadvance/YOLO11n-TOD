@@ -1,0 +1,21 @@
+# 训练集和验证集的图片路径（请使用你的绝对路径或相对于YOLO环境的相对路径）
+train: C:\Users\Administrator\Desktop\visdrone2019\VisDrone2019-DET-train\images  # 训练集图片路径
+val: C:\Users\Administrator\Desktop\visdrone2019\VisDrone2019-DET-val\images     # 验证集图片路径
+test: C:\Users\Administrator\Desktop\visdrone2019\VisDrone2019-DET-test-dev\images # 测试集图片路径（可选）
+
+# 类别数量 (VisDrone 常用的10个类别)[citation:1][citation:8]
+nc: 10
+
+# 类别名称 (顺序需与转换脚本中的 class_id 对应)
+names: [
+  'pedestrian',      # 行人 (原category 1)
+  'people',          # 人群 (原category 2)
+  'bicycle',         # 自行车 (原category 3)
+  'car',             # 小汽车 (原category 4)
+  'van',             # 面包车 (原category 5)
+  'truck',           # 卡车 (原category 6)
+  'tricycle',        # 三轮车 (原category 7)
+  'awning-tricycle', # 带蓬三轮车 (原category 8)
+  'bus',             # 公交车 (原category 9)
+  'motor'            # 摩托车 (原category 10)
+]

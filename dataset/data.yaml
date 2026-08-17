@@ -1,0 +1,8 @@
+
+
+train: E:/BaiduNetdiskDownload/yolo11n-SOD/yolo11n-SOD/dataset/images/train
+val: E:/BaiduNetdiskDownload/yolo11n-SOD/yolo11n-SOD/dataset/images/val
+test: E:/BaiduNetdiskDownload/yolo11n-SOD/yolo11n-SOD/dataset/images/test
+
+nc: 1
+names: ['ship']
