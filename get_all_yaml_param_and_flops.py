@@ -4,7 +4,6 @@ import torch, glob, tqdm
 from ultralytics import YOLO
 from ultralytics.utils.torch_utils import model_info
 
-# 使用教程视频：https://pan.baidu.com/s/1ZDzglU7EIzzfaUDhAhagBA?pwd=kg8k
 
 if __name__ == '__main__':
     flops_dict = {}
