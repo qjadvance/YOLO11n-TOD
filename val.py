@@ -6,31 +6,25 @@ from prettytable import PrettyTable
 from ultralytics import YOLO
 from ultralytics.utils.torch_utils import model_info
 
-# BILIBILI UP 魔傀面具
-# 验证参数官方详解链接：https://docs.ultralytics.com/modes/val/#usage-examples:~:text=of%20each%20category-,Arguments%20for%20YOLO%20Model%20Validation,-When%20validating%20YOLO
-
-# 精度小数点保留位数修改问题可看<使用说明.md>下方的<YOLOV8源码常见疑问解答小课堂>第五点
-# 最终论文的参数量和计算量统一以这个脚本运行出来的为准
-
 def get_weight_size(path):
     stats = os.stat(path)
     return f'{stats.st_size / 1024 / 1024:.1f}'
 
 if __name__ == '__main__':
     model_path = 'runs/train/exp/weights/best.pt'
-    model = YOLO(model_path) # 选择训练好的权重路径
+    model = YOLO(model_path)
     result = model.val(data='/root/dataset/dataset_visdrone/data.yaml',
-                        split='val', # split可以选择train、val、test 根据自己的数据集情况来选择.
+                        split='val', 
                         imgsz=640,
                         batch=16,
                         # iou=0.7,
                         # rect=False,
-                        # save_json=True, # if you need to cal coco metrice
+                        # save_json=True, 
                         project='runs/val',
                         name='exp',
                         )
     
-    if model.task == 'detect': # 仅目标检测任务适用 需要改别的任务可以看：https://www.bilibili.com/video/BV1dBQDY6Ec5/
+    if model.task == 'detect': 
         length = result.box.p.size
         model_names = list(result.names.values())
         preprocess_time_per_image = result.speed['preprocess']
