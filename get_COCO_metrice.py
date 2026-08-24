@@ -5,9 +5,6 @@ from pycocotools.coco import COCO
 from pycocotools.cocoeval import COCOeval
 from tidecv import TIDE, datasets
 
-# COCO指标如果一直生成不出来之类的问题可以看这期视频排查：https://www.bilibili.com/video/BV1SdNizEE4X/
-# 出现缺失的info健的问题请装pycocotools==2.0.8
-
 def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument('--anno_json', type=str, default='data.json', help='label coco json path')
